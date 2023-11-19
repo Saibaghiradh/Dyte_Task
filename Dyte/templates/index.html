@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Query Interface</title>
+</head>
+<body>
+    <h1>Log Query Interface</h1>
+    <form action="/search" method="post">
+        <label for="query">Select a Sample Query:</label>
+        <select name="query" id="query">
+            <option value="error_logs">Find all logs with the level set to "error"</option>
+            <option value="connect_failure_logs">Search for logs with the message containing the term "Failed to connect"</option>
+            <option value="resource_logs">Retrieve all logs related to resourceId "server-1234"</option>
+            <option value="timestamp_range_logs">Filter logs between the timestamp "2023-09-10T00:00:00Z" and "2023-09-15T23:59:59Z" (Bonus)</option>
+        </select><br><br>
+
+        <label for="level">Level:</label>
+        <input type="text" name="level"><br><br>
+
+        <label for="message">Message:</label>
+        <input type="text" name="message"><br><br>
+
+        <label for="resourceId">Resource ID:</label>
+        <input type="text" name="resourceId"><br><br>
+
+        <label for="timestamp">Timestamp:</label>
+        <input type="text" name="timestamp"><br><br>
+
+        <label for="traceId">Trace ID:</label>
+        <input type="text" name="traceId"><br><br>
+
+        <label for="spanId">Span ID:</label>
+        <input type="text" name="spanId"><br><br>
+
+        <label for="commit">Commit:</label>
+        <input type="text" name="commit"><br><br>
+
+        <label for="parentResourceId">Parent Resource ID:</label>
+        <input type="text" name="metadata.parentResourceId"><br><br>
+
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
